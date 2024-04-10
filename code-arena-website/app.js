@@ -48,9 +48,18 @@ document.addEventListener('scroll', () => {console.log(scrollY);
 	}
 	//increase scrollY for top_navigation_bar when page length increases!!!
 	if(scrollY  > 925){document.getElementById("top_navigation_bar").style.display = "block"; document.getElementById("top_navigation_bar").style.animation = "0.4s nav_down forwards";
-	setTimeout(() => {document.getElementById("top_navigation_bar_logo").style.opacity = "1";}, 1000);
+	setTimeout(() => {document.getElementById("top_navigation_bar_logo").style.animation = "1s opac_end forwards";}, 1000);
+	setTimeout(() => {document.getElementById("top_navigation_bar_link_home").style.animation = "1s opac_end forwards";}, 1100);
+	setTimeout(() => {document.getElementById("top_navigation_bar_link_resources").style.animation = "1s opac_end forwards";}, 1150);
+	setTimeout(() => {document.getElementById("top_navigation_bar_link_documentation").style.animation = "1s opac_end forwards";}, 1200);
+	setTimeout(() => {document.getElementById("top_navigation_bar_link_gallery").style.animation = "1s opac_end forwards";}, 1250);
+	setTimeout(() => {document.getElementById("top_navigation_bar_link_alumini").style.animation = "1s opac_end forwards";}, 1300);
+	setTimeout(() => {document.getElementById("top_navigation_bar_link_club").style.animation = "1s opac_end forwards";}, 1350);
 	}
-	else{document.getElementById("top_navigation_bar").style.animation = "0.001s nav_up forwards"; document.getElementById("top_navigation_bar_logo").style.opacity = "0";}
+	else{document.getElementById("top_navigation_bar").style.animation = "0.001s nav_up forwards"; document.getElementById("top_navigation_bar_logo").style.animation = "0.001s opac_sust forwards"; document.getElementById("top_navigation_bar_link_home").style.animation = "0.001s opac_sust forwards"; document.getElementById("top_navigation_bar_link_resources").style.animation = "0.001s opac_sust forwards"; document.getElementById("top_navigation_bar_link_documentation").style.animation = "0.001s opac_sust forwards"; document.getElementById("top_navigation_bar_link_gallery").style.animation = "0.001s opac_sust forwards"; document.getElementById("top_navigation_bar_link_alumini").style.animation = "0.001s opac_sust forwards"; document.getElementById("top_navigation_bar_link_club").style.animation = "0.001s opac_sust forwards";}
+	
+	if(scrollY > 925){document.getElementById("events_bar").style.right = "-17vw";}
+	else{document.getElementById("events_bar").style.right = "-20vw";}
 	
 	if(scrollY > 880){
 	document.getElementById("faculty_profile_div").style.animation = "1s rot_for linear forwards";}
@@ -154,4 +163,145 @@ document.querySelector('.top_navigation_bar_link_club').addEventListener('mouseo
 
 	document.querySelector('.cmg_sn').style.opacity = '0';
 
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+
+		const parallaxElement = document.getElementById("stylish_p");
+		const offset = parallaxElement.offsetTop;
+	window.addEventListener('scroll', ()=> {
+
+		let scroll_posVW = (window.scrollY / window.innerWidth) * 100;
+
+		let parallaxOffset = scroll_posVW * -0.2;
+
+		let scroll_pos_VW = (window.scrollY / window.innerWidth) * 100;
+		parallaxElement.style.transform = `translateY(${parallaxOffset - offset}vw)`;
+
+	});
+
+});
+
+let lastY;
+
+function vw_conv(val){
+return (val / window.innerWidth) * 100;
+}
+
+const div = document.getElementById("events_bar");
+
+div.addEventListener('mouseenter', (e) => {
+	lastY = vw_conv(e.clientY);
+});
+
+div.addEventListener('mousemove', (e) => {
+
+const dy = vw_conv(e.clientY) - vw_conv(lastY);
+
+lastY = vw_conv(e.clientY);
+
+const style = window.getComputedStyle(div);
+const matrix = new DOMMatrixReadOnly(style.transform);
+
+const new_Y = (vw_conv(matrix.m42) + dy) - 19;
+div.style.top = `${new_Y}vw`;
+//console.log("newY" + new_Y);
+
+});
+
+document.addEventListener('scroll', function() {
+    const line1 = document.getElementById('s-line_1');
+    const words1 = line1.getElementsByClassName('s-word');
+    const line2 = document.getElementById('s-line_2');
+    const words2 = line2.getElementsByClassName('s-word');
+    const line3 = document.getElementById('s-line_3');
+    const words3 = line3.getElementsByClassName('s-word');
+    const line4 = document.getElementById('s-line_4');
+    const words4 = line4.getElementsByClassName('s-word');
+    const line5 = document.getElementById('s-line_5');
+    const words5 = line5.getElementsByClassName('s-word');
+    const line6 = document.getElementById('s-line_6');
+    const words6 = line6.getElementsByClassName('s-word');
+    const line7 = document.getElementById('s-line_7');
+    const words7 = line7.getElementsByClassName('s-word');
+    
+    // Adjust this value to where you want the animation to trigger
+    const triggerScrollY_1 = 250;
+    const triggerScrollY_2 = 350;
+    const triggerScrollY_3 = 450;
+    const triggerScrollY_4 = 550;
+    const triggerScrollY_5 = 560;
+    const triggerScrollY_6 = 570;
+    const triggerScrollY_7 = 580; // For example, when the user has scrolled 200px
+    
+    if (window.scrollY > triggerScrollY_1) {
+        for (let word of words1) {
+            word.style.transform = 'translateY(0%)'; // Move words to original position
+        }
+    } else {
+        for (let word of words1) {
+            word.style.transform = 'translateY(100%)'; // Hide words below
+        }
+    }
+    
+    if (window.scrollY > triggerScrollY_2) {
+        for (let word of words2) {
+            word.style.transform = 'translateY(0%)'; // Move words to original position
+        }
+    } else {
+        for (let word of words2) {
+            word.style.transform = 'translateY(100%)'; // Hide words below
+        }
+    }
+    
+    if (window.scrollY > triggerScrollY_3) {
+        for (let word of words3) {
+            word.style.transform = 'translateY(0%)'; // Move words to original position
+        }
+    } else {
+        for (let word of words3) {
+            word.style.transform = 'translateY(100%)'; // Hide words below
+        }
+    }
+    
+    if (window.scrollY > triggerScrollY_4) {
+        for (let word of words4) {
+            word.style.transform = 'translateY(0%)'; // Move words to original position
+        }
+    } else {
+        for (let word of words4) {
+            word.style.transform = 'translateY(100%)'; // Hide words below
+        }
+    }
+    
+    if(window.scrollY > triggerScrollY_5){
+    	for(let word of words5){
+    		word.style.transform = 'translateY(0%)';
+    	}
+    } else{
+    	for(let word of words5){
+    		word.style.transform = 'translateY(100%)';
+    	}
+    }
+    
+    if(window.scrollY > triggerScrollY_6){
+    	for(let word of words6){
+    		word.style.transform = 'translateY(0%)';
+    	}
+    } else{
+    	for(let word of words6){
+    		word.style.transform = 'translateY(100%)';
+    	}
+    }
+    
+    if (window.scrollY > triggerScrollY_7) {
+        for (let word of words7) {
+            word.style.transform = 'translateY(0%)'; // Move words to original position
+        }
+    } else {
+        for (let word of words7) {
+            word.style.transform = 'translateY(100%)'; // Hide words below
+        }
+    }
+    
 });
