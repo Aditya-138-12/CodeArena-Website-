@@ -1,3 +1,4 @@
+/* JAI SHRII RAM */
 @font-face {
     font-family: font1;
     src: url("ModernWarfare-OV7KP.ttf");
@@ -45,30 +46,39 @@ body{overflow-y:hidden;}
 
 .sub{position:absolute; top:25vw; background-color:transparent; height:3.5vw; width:100%; z-index:10000;}
 
-.stylish{background-color:green; position:absolute; height:25vw; width:0%; top:10vw; z-index:1000;}
+.stylish{background-color:none; position:absolute; height:0vw; width:100%; top:19vw; z-index:1000; left:0vw;}
 
 .stylish_p{position:relative;
 	font-family: font1;
-    top:16vw;
-    left:10vw;
-    width:80vw;
-    font-size: 10vw;
+    width:100%;
+    text-align:center;
+    font-size: 13vw;
     text-align: left;
     line-height: 0.8;
     color: white;
     opacity:1;
     z-index:1000;
-    animation:1.5s anm forwards;
     cursor:default;
-    }
+    -webkit-box-reflect:below 1px linear-gradient(transparent,rgba(0, 0, 0, 0));
+    line-height:0.4996em;
+    outline:none;
+    animation:2s tubelight linear infinite;
     
-.sub_p{
+    
+    }
+@keyframes tubelight{
+0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%{color:rgba(255, 255, 255, 0.2); text-shadow:none; -webkit-box-reflect:below 1px linear-gradient(transparent,rgba(0, 0, 0, 0));}
+18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%{color:white; text-shadow:0px 0px 10px white, 0px 0px 20px white, 0px 0px 40px white, 0px 0px 80px white, 0px 0px 160px white;
+-webkit-box-reflect:below 1px linear-gradient(transparent,rgba(0, 0, 0, 1));}
+}
+    
+.sub_p{display:none;
 	position:relative;
 	width:30vw;
     color: white;
     font-family: font3;
     font-size: 2vw;
-    top:1vw;
+    top:10vw;
     left:35.6vw;
     z-index:4000;
     animation:1s anm2 forwards;
@@ -615,9 +625,16 @@ body{overflow-y:hidden;}
 
 @keyframes drev{to{filter:blur(0px);}}
 
-.heading_main_2{font-size:4vw; margin-top:8vw; font-family:long;}
+.heading_main_2{font-size:4vw; margin-top:2vw; font-family:long;}
 
-.about_main_2_p{position:absolute; font-size:1vw; color:rgba(108, 122, 137, 0.8); width:80vw; left:10vw; top:calc(8vw + 8vw);}
+.s-line_1{position:absolute; left:7vw; width:90%;}
+.s-line_2{position:absolute; left:7vw; top:9.5vw; width:90%;}
+.s-line_3{position:absolute; left:7vw; top:12vw; width:90%;}
+.s-line_4{position:absolute; left:7vw; top:14.5vw; width:90%;}
+.s-line_5{position:absolute; left:7vw; top:17.2vw; width:90%;}
+.s-line_6{position:absolute; left:7vw; top:19.8vw; width:90%;}
+.s-line_7{position:absolute; left:7vw; top:22.3vw; width:80%;}
+.s-word{position:relative; top:0vw; font-size:2vw; font-family:sans-serif; margin-right:0.25vw; margin-left:0.25vw; transition:transform 0.5s ease-in;}
 
 .coding_anm_div{position:absolute; width:18vw; height:10vw; right:0vw; background-color:none;}
 
@@ -646,6 +663,8 @@ body{overflow-y:hidden;}
 .top_navigation_bar{position:fixed; display:none; width:0%; height:4vw; background-color:rgba(255,255,255,0.9); border-bottom:0.1vw solid rgba(0,0,0,0.2);}
 
 .top_navigation_bar_logo{position:relative; left:2vw; top:0.5vw; width:3vw; height:3vw; background-image:url("scjit_cse_logo.jpg"); background-size:100% 100%; border-radius:50%; opacity:0;}
+@keyframes opac_end{from{opacity:0;} to{opacity:1;}}
+@keyframes opac_sust{from{opacity:1;} to{opacity:0;}}
 
 .top_navigation_bar_link_home{position:relative; width:2.8vw; height:0vw; font-size:1vw; left:32.5vw; top:-1.7vw; color:rgba(0,0,0,0.5); font-weight:bold; font-family:; letter-spacing:0.1vw; opacity:0;}
 
@@ -665,9 +684,11 @@ body{overflow-y:hidden;}
 @keyframes nav_up{from{top:0vw;} to{top:-5vw;}}
 */
 
-.about_main_2_p_2{position:absolute; font-size:1vw; color:rgba(108, 122, 137, 0.8); width:80vw; left:10vw; top:calc(8vw + 12vw);}
+.about_main_2_p_2{position:absolute; font-size:1vw; color:rgba(108, 122, 137, 0.8); width:80vw; left:10vw; top:calc(8vw + 15vw);}
 
-.heading_main_3{font-size:4vw; margin-top:14vw; font-family:long;}
+.heading_main_3{font-size:4vw; margin-top:20vw; font-family:long;}
+
+:root{--parallax-translate:0vw;}
 
 .faculty_profile_div{position:absolute; left:8vw; top:34vw; height:25vw; width:25vw; transition:0.2s; cursor:default; display:; opacity:0;}
 .faculty_profile_div:hover{box-shadow:0vw 0vw 36px rgba(0,0,0,0.06); transition:0.2s;}
@@ -773,7 +794,7 @@ body{overflow-y:hidden;}
 .star{height:0.08px; width:0.08px; border-radius:50%; background-color:white;}
 @keyframes twinkle{from{opacity:0.7;} to{opacity:0;}}
 
-.div_scroll_downbtn{position:absolute; bottom:0vw; right:50%; height:6.5vw; width:3vw; background-color:transparent; z-index:1000; cursor:pointer;}
+.div_scroll_downbtn{position:absolute; bottom:0vw; right:49%; height:6.5vw; width:3vw; background-color:transparent; z-index:1000; cursor:pointer;}
 
 .scroll_down_1{position:absolute; top:0vw; height:1.5vw; width:1.5vw; border-left:.1vw solid white; border-bottom:.1vw solid white; transform:rotate(-45deg); opacity:1; animation:1s scroll_anm forwards alternate-reverse infinite;}
 .scroll_down_2{position:absolute; top:1vw; height:1.5vw; width:1.5vw; border-left:.1vw solid white; border-bottom:.1vw solid white; transform:rotate(-45deg); opacity:1; animation:1s scroll_anm forwards alternate-reverse infinite; animation-delay:0.2s;}
@@ -781,7 +802,8 @@ body{overflow-y:hidden;}
 .scroll_down_4{position:absolute; top:3vw; height:1.5vw; width:1.5vw; border-left:.1vw solid white; border-bottom:.1vw solid white; transform:rotate(-45deg); opacity:1; animation:1s scroll_anm forwards alternate-reverse infinite; animation-delay:0.6s;}
 
 @keyframes scroll_anm{from{opacity:1;} to{opacity:0;}}
-
-
+/* JAI SHRI RAM */
+.events_bar{background-color:black; position:fixed; top:3vw; right:-20vw; height:40vw; width:20vw; border-radius:50%; cursor:pointer; transition:top 5s ease; transition:right 0.2s ease-in;}
+.events_link{position:absolute; color:white; font-size:1.5vw; font-family:font1; left:-2vw; top:19.5vw; transform:rotate(-90deg); cursor:pointer; letter-spacing:0.01vw;}
 
 
